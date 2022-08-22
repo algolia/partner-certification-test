@@ -25,8 +25,7 @@ export function ProductCardHitComponent({
   insightsEventName = 'PLP: Product Clicked',
   viewMode,
   highlighting = true,
-}: ProductCardHitProps) : JSX.Element {
-
+}: ProductCardHitProps): JSX.Element {
   const product: ProductCardProps = {
     url: `/product/${hit.objectID}?queryID=${hit.__queryID}`,
     image: hit.image_urls?.[0],
@@ -35,7 +34,7 @@ export function ProductCardHitComponent({
     price: hit.price.value,
     rating: parseFloat(hit.reviews.rating),
     reviews: parseInt(hit.reviews.count),
-    promoted: hit?._rankingInfo?.promoted ? true : false
+    promoted: Boolean(hit?._rankingInfo?.promoted),
   }
 
   // Highlighting
@@ -76,9 +75,10 @@ export function ProductCardHitComponent({
   )
 }
 
-export const RelatedProductCardHit : any = connectHitInsights<ProductCardHitProps>(
-  searchInsights
-)(memo(ProductCardHitComponent, isEqual))
+export const RelatedProductCardHit: any =
+  connectHitInsights<ProductCardHitProps>(searchInsights)(
+    memo(ProductCardHitComponent, isEqual)
+  )
 
 export function RelatedProductCardHitShowcase(props: ProductCardHitProps) {
   return (

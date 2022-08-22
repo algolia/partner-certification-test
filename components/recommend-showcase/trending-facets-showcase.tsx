@@ -1,6 +1,7 @@
 import { TrendingFacets } from '@algolia/recommend-react'
 import { useAtomValue } from 'jotai/utils'
 import { useRouter } from 'next/router'
+
 import { recommendClientAtom } from '@/layouts/app-layout'
 import { indexName as defaultIndexName } from '@/utils/env'
 

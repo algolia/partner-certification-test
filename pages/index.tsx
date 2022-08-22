@@ -34,7 +34,6 @@ export default function Home(props: SearchPageLayoutProps) {
         classNameTitle="text-3xl font-normal tracking-wider leading-tight laptop:text-7xl"
       />
 
-
       <ProductsShowcase
         title="New in shoes"
         indexId="shoes"
