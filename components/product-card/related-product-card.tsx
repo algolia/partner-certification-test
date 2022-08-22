@@ -33,7 +33,7 @@ export function ProductCardHitComponent({
     colors: undefined,
     price: hit.price.value,
     rating: parseFloat(hit.reviews.rating),
-    reviews: parseInt(hit.reviews.count),
+    reviews: parseInt(hit.reviews.count, 10),
     promoted: Boolean(hit?._rankingInfo?.promoted),
   }
 

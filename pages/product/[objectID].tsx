@@ -1,3 +1,8 @@
+import recommend from '@algolia/recommend'
+import {
+  RelatedProducts,
+  FrequentlyBoughtTogether,
+} from '@algolia/recommend-react'
 import { HorizontalSlider } from '@algolia/ui-components-horizontal-slider-react'
 import type { GetServerSidePropsContext } from 'next'
 import { Hits, Configure } from 'react-instantsearch-dom'
@@ -13,12 +18,6 @@ import {
 import { appId, searchApiKey, recommendIndexName } from '@/utils/env'
 
 import '@algolia/ui-components-horizontal-slider-theme'
-
-import {
-  RelatedProducts,
-  FrequentlyBoughtTogether,
-} from '@algolia/recommend-react'
-import recommend from '@algolia/recommend'
 
 const recommendClient = recommend(appId, searchApiKey)
 
